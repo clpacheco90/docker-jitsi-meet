@@ -5,7 +5,7 @@ ENV TERM xterm
 
 RUN apt-get update && \
 	apt-get install -y wget dnsutils vim telnet && \
-	echo 'deb https://download.jitsi.org unstable/' >> /etc/apt/sources.list.d/jitsi-unstable.list && \
+	sudo sh -c "echo 'deb https://download.jitsi.org unstable/' > /etc/apt/sources.list.d/jitsi-unstable.list" && \
 	wget -qO - https://download.jitsi.org/jitsi-key.gpg.key | sudo apt-key add - && \
 	#echo 'deb http://download.jitsi.org/nightly/deb unstable/' >> /etc/apt/sources.list && \
 	#wget -qO - https://download.jitsi.org/nightly/deb/unstable/archive.key | apt-key add - && \
